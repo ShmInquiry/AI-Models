@@ -1,0 +1,10 @@
+/home/tactical/Documents/Rust/machine-learning/cat-breed-k-means/target/debug/deps/libproc_macro_error-7b5f0b22f4b9f88b.rmeta: /home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/lib.rs /home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/dummy.rs /home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/multi.rs /home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/single.rs
+
+/home/tactical/Documents/Rust/machine-learning/cat-breed-k-means/target/debug/deps/libproc_macro_error-7b5f0b22f4b9f88b.rlib: /home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/lib.rs /home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/dummy.rs /home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/multi.rs /home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/single.rs
+
+/home/tactical/Documents/Rust/machine-learning/cat-breed-k-means/target/debug/deps/proc_macro_error-7b5f0b22f4b9f88b.d: /home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/lib.rs /home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/dummy.rs /home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/multi.rs /home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/single.rs
+
+/home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/lib.rs:
+/home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/dummy.rs:
+/home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/multi.rs:
+/home/tactical/.cargo/registry/src/index.crates.io-6f17d22bba15001f/proc-macro-error-0.2.6/src/single.rs:

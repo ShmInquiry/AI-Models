@@ -1,0 +1,7 @@
+centroids = [ # Avg Expenditure, Wealth, Card-Type
+    4.5, 7.0,  # Low income
+    10.5, 24.0,  # Median income
+    17.7, 39.5,  # High income
+]
+noise = 1.8
+samples_per_centroid = 2000
