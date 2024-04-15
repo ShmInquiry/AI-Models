@@ -1,1 +1,1 @@
-/home/tactical/Documents/Rust/machine-learning/wealthdistributionByAge/target/debug/plot: /home/tactical/Documents/Rust/machine-learning/wealthdistributionByAge/src/bin/plot.rs
+/home/tactical/Documents/SME_Project/FinalProject/AI-Models/Models/wealthdistributionByAge/target/debug/plot: /home/tactical/Documents/SME_Project/FinalProject/AI-Models/Models/wealthdistributionByAge/src/bin/plot.rs

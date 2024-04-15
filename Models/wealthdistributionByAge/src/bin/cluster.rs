@@ -22,17 +22,30 @@ fn read_data_from_stdin() -> Result<Matrix<f64>, Box<dyn Error>> {
     Ok(Matrix::new(&data.len() / 2, 2, data))
 }
 
-fn export_result_to_stdout(samples: Matrix<f64>, classes: Vec<usize>) -> Result<(), Box<dyn Error>> {
+fn export_result_to_stdout(samples: Matrix<f64>, classes: Vec<&str>) -> Result<(), Box<dyn Error>> {
     let mut writer = csv::Writer::from_writer(io::stdout());
     writer.write_record(&["expenditure", "wealth", "class"])?;
-    for sample in samples.iter_rows().zip(classes) {
-        writer.serialize(sample)?;
+    
+    for (sample, user_category) in samples.iter_rows().zip(classes.iter()) {
+        let mut record: Vec<String> = sample.iter().map(|&x| x.to_string()).collect();
+        record.push(user_category.to_string());
+        writer.write_record(&record)?;
     }
+    
     Ok(())
 }
+// fn main() {
 
+//     let samples = read_data_from_stdin().unwrap();
+
+//     let mut model = KMeansClassifier::new(CLUSTER_COUNT);
+//     model.train(&samples).unwrap();
+
+//     let classes = model.predict(&samples).unwrap();
+
+//     export_result_to_stdout(samples, classes.into_vec()).unwrap();
+// }
 fn main() {
-
     let samples = read_data_from_stdin().unwrap();
 
     let mut model = KMeansClassifier::new(CLUSTER_COUNT);
@@ -40,5 +53,10 @@ fn main() {
 
     let classes = model.predict(&samples).unwrap();
 
-    export_result_to_stdout(samples, classes.into_vec()).unwrap();
+    let mut user_categories = vec!["saver", "traveler", "foodie"]; // Define the new user categories
+
+    // Map the cluster indices to user categories
+    let classified_users: Vec<&str> = classes.iter().map(|&class_index| user_categories[class_index]).collect();
+
+    export_result_to_stdout(samples, classified_users).unwrap();
 }

@@ -13,10 +13,10 @@ This Python project is a data analysis and visualization tool that utilizes popu
 - 📤 Exporting visualizations in various formats
 - 🖥️ User-friendly interface for easy data exploration
 
-## Project: Classification Result Visualization Tool 🦀
+## Rust Project: Classification Result Visualization Tool 🦀
 
 ### Description
-The Rust/ Python project is a classification result visualization tool that uses the `gnuplot` crate/ library. It involves processing input data, categorizing it into different classes, and visualizing the classification results through scatter plots with distinct symbols and colors for each class. The inteded provided template is to simulate customer segregation and product customization for the customer !
+The Rust project is a classification result visualization tool that uses the `gnuplot` crate. It involves processing input data, categorizing it into different classes, and visualizing the classification results through scatter plots with distinct symbols and colors for each class. The inteded provided template is to simulate customer segregation and product customization for the customer !
 
 ### Features
 - 📊 Input data processing and classification

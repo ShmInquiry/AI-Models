@@ -24,17 +24,17 @@ fn main() -> Result<(), Box<dyn Error>>{
             .points(
                     &x[0],
                     &y[0],
-                    &[Caption("Silver card"), Color("grey"), PointSymbol('+')],
+                    &[Caption("Saver card"), Color("pink"), PointSymbol('+')],
             )
             .points(
                     &x[1],
                     &y[1],
-                    &[Caption("Gold card"), Color("yellow"), PointSymbol('x')],
+                    &[Caption("Traveller card"), Color("blue"), PointSymbol('x')],
             )
             .points(
                     &x[2],
                     &y[2],
-                    &[Caption("Blue card"), Color("blue"), PointSymbol('o')],
+                    &[Caption("Foodie card"), Color("green"), PointSymbol('o')],
             );
     fg.show();
     Ok(())

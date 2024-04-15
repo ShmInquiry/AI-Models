@@ -15,35 +15,31 @@ use std::fs::read_to_string;
 use structopt::StructOpt;
 
 fn generate_data(centroids: &Matrix<f64>,
-                 points_per_centroid: usize,
-                 noise: f64)
-                 -> Matrix<f64> {
-    assert!(centroids.cols() > 0, "centroids cannot be empty.");
-    assert!(centroids.rows() > 0, "centroids cannot be empty.");
-    assert!(noise >= 0f64, "noise must be non-negative.");
-    let mut raw_cluster_data = Vec::with_capacity(centroids.rows() * points_per_centroid *
-                                                  centroids.cols());
+    points_per_centroid: usize,
+    noise: f64)
+    -> Matrix<f64> {
+assert!(centroids.cols() > 0, "centroids cannot be empty.");
+assert!(centroids.rows() > 0, "centroids cannot be empty.");
+assert!(noise >= 0f64, "noise must be non-negative.");
 
-    let mut rng = thread_rng();
-    let normal_rv = Normal::new(0f64, noise).unwrap();
+let mut raw_cluster_data = Vec::with_capacity(centroids.rows() * points_per_centroid * centroids.cols());
 
-    for _ in 0..points_per_centroid {
-        // generate points from each centroid
-        for centroid in centroids.iter_rows() {
-            // generate a point randomly around the centroid
-            let mut point = Vec::with_capacity(centroids.cols());
-            for feature in centroid.iter() {
-                point.push(feature + normal_rv.sample(&mut rng));
-            }
+let mut rng = thread_rng();
+let normal_rv = Normal::new(0f64, noise).unwrap();
 
-            // push point to raw_cluster_data
-            raw_cluster_data.extend(point);
-        }
+for _ in 0..points_per_centroid {
+for (category_centroid_index, category_centroid) in centroids.iter_rows().enumerate() {
+for _ in 0..points_per_centroid {
+    let mut point = Vec::with_capacity(centroids.cols());
+    for feature in category_centroid.iter() {
+        point.push(feature + normal_rv.sample(&mut rng));
     }
+    raw_cluster_data.extend(point);
+}
+}
+}
 
-    Matrix::new(centroids.rows() * points_per_centroid,
-                centroids.cols(),
-                raw_cluster_data)
+Matrix::new(centroids.rows() * points_per_centroid, centroids.cols(), raw_cluster_data)
 }
 
 #[derive(Debug, Deserialize)]
@@ -67,8 +63,8 @@ fn main() -> Result<(), std::io::Error> {
     let toml_config_str = read_to_string(options.config_file_path)?;
     let config: Config = toml::from_str(&toml_config_str)?;
 
-    let centroids = Matrix::new(3, 2, config.centroids.to_vec());
-
+    let centroids_data: Vec<f64> = config.centroids.iter().cloned().collect();
+    let centroids = Matrix::new(config.centroids.len() / 2, 2, centroids_data);
     let samples = generate_data(&centroids, config.samples_per_centroid, config.noise);
 
     let mut writer = csv::Writer::from_writer(io::stdout());
